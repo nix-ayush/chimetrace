@@ -4,20 +4,25 @@
 - [ ] Accept any video format, and extract it's audio using ffmpeg-likewise
 - [ ] Convert the audio to ~.wav~
 - [ ] Support other audio formats!
-* TODO [#B] Plain/no-bg noise -> filter noise
-
+* TODO [#B] Plain/no-bg noise -> filter noise [0/1]
 ** TODO Plain [0/2]
 - [ ] Support for no bg
 - [ ] Instead peak only the chimes
+* TODO [#B] Optimize memory handling for massive stream VODs [0/2]
+- [ ] Implement streaming/buffering to process data in small chunks (e.g., 10MB blocks)
+- [ ] Prevent RAM crashes when scanning multi-gigabyte recording files
+* TODO [#B] Support multi-chime detection catalog [0/2]
+- [ ] Allow loading a collection/folder of multiple chime sounds instead of just one
+- [ ] Match the stream data against a catalog of signatures to find different alerts
 
-* TODO [#C] Write a python/elisp script...
-...which goes into the main python files and scrapes the comments and looks out for:
+* TODO [#C] Write a python/elisp script... [0/2]
+- [ ] Which goes into the main python files and scrapes the comments and looks out for:
 #+begin_src org
   # [#<degree-of-priority>] TODO <what to do>
 #+end_src
 and after scraping append/build a new todo(do not edit old one) which consists of task
 and everything with org format of tasks/agenda.
-- also further make it two ways so it either clears up the todo comment when completed from the main py file
+- [ ] Also further make it two ways so it either clears up the todo comment when completed from the main py file
   or maybe do two-way so that the TODO when marked done on org file marks it back to py file(which might cluster it)
   ~PS: bruh this entirely seems itself a new program from scratch to do haha~
 
