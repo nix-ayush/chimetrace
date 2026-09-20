@@ -1,21 +1,26 @@
 #+startup: show2levels
 
-* TODO [#A] Accept video instead of direct ~.wav~ file [0/3]
-- [ ] Accept any video format, and extract it's audio using ffmpeg-likewise
-- [ ] Convert the audio to ~.wav~
-- [ ] Support other audio formats!
-* TODO [#B] Plain/no-bg noise -> filter noise [0/1]
+* TODO [#A] refactor: procedural code into an Object-Oriented Audio Class
+- [ ] Create a custom ~Audio~ class that extracts header parameters (~nframes~, ~framerate~, ~sampwidth~) once at initialization
+- [ ] Implement lazy loading/caching for numerical arrays so byte parsing happens only on the first call
+- [ ] Leverage Python's reference-passing behavior to return cached numerical structures without duplicating memory blocks
+
+* TODO [#B] feature:plain/no-bg noise -> filter noise [0/1]
 ** TODO Plain [0/2]
 - [ ] Support for no bg
 - [ ] Instead peak only the chimes
-* TODO [#B] Optimize memory handling for massive stream VODs [0/2]
+* TODO [#B] optimize: optimize memory handling for massive stream VODs [0/2]
 - [ ] Implement streaming/buffering to process data in small chunks (e.g., 10MB blocks)
 - [ ] Prevent RAM crashes when scanning multi-gigabyte recording files
-* TODO [#B] Support multi-chime detection catalog [0/2]
+* TODO [#B] evolve: support multi-chime detection catalog [0/2]
 - [ ] Allow loading a collection/folder of multiple chime sounds instead of just one
 - [ ] Match the stream data against a catalog of signatures to find different alerts
 
-* TODO [#C] Write a python/elisp script... [0/2]
+* TODO [#C] feature: accept video instead of direct ~.wav~ file [0/3]
+- [ ] Accept any video format, and extract it's audio using ffmpeg-likewise
+- [ ] Convert the audio to ~.wav~
+- [ ] Support other audio formats!
+* TODO [#C] project: write a python/elisp script... [0/2]
 - [ ] Which goes into the main python files and scrapes the comments and looks out for:
 #+begin_src org
   # [#<degree-of-priority>] TODO <what to do>
