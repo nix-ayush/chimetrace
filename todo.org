@@ -1,11 +1,23 @@
+#+startup: show2levels
 
-* TODO Plain/no-bg noise -> filter noise
-
-** TODO Plain
-- [ ] Support for no bg
-- [ ] Instead peak only the chimes
-
-* TODO Accept video instead of direct ~.wav~ file [0/3]
+* TODO [#A] Accept video instead of direct ~.wav~ file [0/3]
 - [ ] Accept any video format, and extract it's audio using ffmpeg-likewise
 - [ ] Convert the audio to ~.wav~
 - [ ] Support other audio formats!
+* TODO [#B] Plain/no-bg noise -> filter noise
+
+** TODO Plain [0/2]
+- [ ] Support for no bg
+- [ ] Instead peak only the chimes
+
+* TODO [#C] Write a python/elisp script...
+...which goes into the main python files and scrapes the comments and looks out for:
+#+begin_src org
+  # [#<degree-of-priority>] TODO <what to do>
+#+end_src
+and after scraping append/build a new todo(do not edit old one) which consists of task
+and everything with org format of tasks/agenda.
+- also further make it two ways so it either clears up the todo comment when completed from the main py file
+  or maybe do two-way so that the TODO when marked done on org file marks it back to py file(which might cluster it)
+  ~PS: bruh this entirely seems itself a new program from scratch to do haha~
+
