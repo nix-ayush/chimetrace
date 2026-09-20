@@ -1,0 +1,11 @@
+
+* TODO Plain/no-bg noise -> filter noise
+
+** TODO Plain
+- [ ] Support for no bg
+- [ ] Instead peak only the chimes
+
+* TODO Accept video instead of direct ~.wav~ file [0/3]
+- [ ] Accept any video format, and extract it's audio using ffmpeg-likewise
+- [ ] Convert the audio to ~.wav~
+- [ ] Support other audio formats!
