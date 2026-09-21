@@ -21,8 +21,6 @@ def main():
 
     with wave.open(str(main_audio_path), "rb") as main_audio, \
         wave.open(str(chime_audio_path), "rb") as chime_audio:
-        # print("Duration of main_audio", get_duration(main_audio.getnframes(), main_audio.getframerate()), "seconds")
-        # print("Duration of chime_audio", get_duration(chime_audio.getnframes(), chime_audio.getframerate()), "seconds")
 
         # checking if both are equal channel (stereo/mono):
         if main_audio.getnchannels() == chime_audio.getnchannels():
@@ -30,7 +28,13 @@ def main():
             if main_audio.getsampwidth() == chime_audio.getsampwidth():
                 # now we have equal bit depth, we check framerate is equal
                 if main_audio.getframerate() == chime_audio.getframerate():
-                    pass
+                    main_num = raw_to_num_stereo(main_audio.readframes(main_audio.getnframes()))
+                    chime_num = raw_to_num_stereo(chime_audio.readframes(chime_audio.getnframes()))
+
+                    MAX_DIVISOR = 32768.0
+                    main_num = normalize(main_num, MAX_DIVISOR)
+                    chime_num = normalize(chime_num, MAX_DIVISOR)
+                    
                 else:
                     # [#A] TODO Do upsampling or downsampling
                     # [#B] TODO provide option/config for either of the up/down-sampling
@@ -48,6 +52,14 @@ def main():
 
 def get_duration(frames, framerate):
     return frames / framerate
+
+def raw_to_num_stereo(raw_bytes):
+    num = array('h', raw_bytes)
+    return num
+
+def normalize(num, divisor):
+    num = array('f', (sample / divisor for sample in num))
+    return num
 
 if __name__ == "__main__":
     main()
