@@ -61,5 +61,13 @@ def normalize(num, divisor):
     num = array('f', (sample / divisor for sample in num))
     return num
 
+def index_to_seconds(index, framerate, channel):
+    # MONO: index / framerate for mono
+
+    # STEREO: index / framerate * 2 for stereo since stereo has both L & R side!
+    #       : index / framerate * number_of_channel(s)
+
+    return index / (framerate * channel)
+
 if __name__ == "__main__":
     main()
