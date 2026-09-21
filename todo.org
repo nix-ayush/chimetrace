@@ -5,6 +5,9 @@
 - [ ] Implement lazy loading/caching for numerical arrays so byte parsing happens only on the first call
 - [ ] Leverage Python's reference-passing behavior to return cached numerical structures without duplicating memory blocks
 
+* TODO [#B] optimize: detect identical stereo channels and down-mix to mono [0/2]
+- [ ] Add a conditional check to verify if Left values equal Right values across the array
+- [ ] If true, apply ~[::2]~ strided slicing to discard the duplicate channel and cut data processing size in half
 * TODO [#B] feature:plain/no-bg noise -> filter noise [0/1]
 ** TODO Plain [0/2]
 - [ ] Support for no bg
