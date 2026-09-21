@@ -1,0 +1,14 @@
+* 🍊 The Audio File Orange Analogy
+
+** The Whole Unpeeled Orange = The .wav File
+The outer peel and the white stringy bits are the Metadata Header (containing parameters like nchannels, framerate, and sampwidth). They wrap around everything and hold it together so your media player knows how to read the file.
+** The 12 Slices = Seconds of Time
+Each major slice of the orange represents exactly 1 second of audio time. If your file is 12 seconds long, your orange has 12 slices.
+** The Tiny Juice Pods = The Frames
+Inside just one slice (one second), you have thousands of those tiny, individual organic pods packed tightly together. In your specific file, there are exactly 24,000 juice pods (frames) packed into that one single slice (second). This is your framerate.
+** The Micro-Drops Inside = The Samples
+If you pop open just one single tiny juice pod (1 frame), you find the actual juice inside. Because your file is stereo (nchannels=2), each tiny pod contains exactly two micro-drops of juice sitting side-by-side:
+*** Micro-Drop 1: The volume number for the Left ear (Sample 1)
+*** Micro-Drop 2: The volume number for the Right ear (Sample 2)
+** The Size of the Drop = The sampwidth
+sampwidth tells you the physical data size of 1 single micro-drop. In your file, sampwidth=2, meaning each individual drop is 2 bytes big (16-bit). Bigger drops mean more precision and clearer audio!
