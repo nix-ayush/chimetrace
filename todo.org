@@ -13,6 +13,10 @@
 - [ ] If distinct, plan stride-by-2 search window loops to match true stereo signatures.
   /Avoid mono down-mixing to preserve individual channel spatial data./
 - [ ] If *not* distinct, calculate structural mono values using sample-by-sample averaging: ~(L + R) / 2.0~ to prevent data loss
+* TODO [#B] math: implement automatic DC-offset correction [0/2]
+- [ ] Calculate the mathematical mean of normalized floating-point arrays
+  /This mean is called DC-offset./
+- [ ] Subtract the calculated mean from every single sample to remove the offset effects before matching
 * TODO [#B] feature:plain/no-bg noise -> filter noise [0/1]
 ** TODO Plain [0/2]
 - [ ] Support for no bg
