@@ -8,6 +8,12 @@
 * TODO [#B] optimize: detect identical stereo channels and down-mix to mono [0/2]
 - [ ] Add a conditional check to verify if Left values equal Right values across the array
 - [ ] If true, apply ~[::2]~ strided slicing to discard the duplicate channel and cut data processing size in half
+* TODO [#B] refine: implement true stereo down-mixing for asymmetrical tracks [0/3]
+- [ ] Parse audio channels to check if Left and Right data streams diverge significantly
+- [ ] If *not* distinct, plan stride-by-2 search window loops to match true stereo signatures.
+  /Avoid mono down-mixing to preserve individual channel spatial data./
+- [ ] If distinct, calculate structural mono values using sample-by-sample averaging: ~(L + R) / 2.0~ to prevent data loss
+
 * TODO [#B] feature:plain/no-bg noise -> filter noise [0/1]
 ** TODO Plain [0/2]
 - [ ] Support for no bg
