@@ -2,6 +2,7 @@ from pathlib import Path
 from array import array
 from enum import Enum
 import wave
+import statistics
 
 class CONFIG(Enum):
     MIXING="UP"
